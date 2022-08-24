@@ -15,13 +15,31 @@ extents = Vector2( 18, 10 )
 [node name="TestLevel" type="Node2D"]
 position = Vector2( -1, 193 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Plataforma" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma"]
 position = Vector2( 148.5, 79 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+[node name="Sprite" type="Sprite" parent="Plataforma"]
+position = Vector2( 150.5, 78.5 )
+scale = Vector2( 4.67188, 0.328125 )
+texture = ExtResource( 2 )
+
+[node name="Plataforma2" type="StaticBody2D" parent="."]
+position = Vector2( 88, 59 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma2"]
+position = Vector2( 148.5, 79 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Plataforma2"]
 position = Vector2( 150.5, 78.5 )
 scale = Vector2( 4.67188, 0.328125 )
 texture = ExtResource( 2 )
@@ -42,11 +60,8 @@ scale = Vector2( 0.585937, 0.328125 )
 texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 137, 36 )
+position = Vector2( 149, 33 )
 currentHealth = 90
-
-[node name="WoodItem" parent="." instance=ExtResource( 3 )]
-position = Vector2( 207, 33 )
 
 [node name="PoisonPit" parent="." instance=ExtResource( 5 )]
 position = Vector2( 47, 65 )
@@ -54,3 +69,26 @@ collision_mask = 0
 
 [node name="Heart" parent="." instance=ExtResource( 6 )]
 position = Vector2( 240, 51 )
+
+[node name="Beans" type="Node" parent="."]
+
+[node name="Bean" parent="Beans" instance=ExtResource( 3 )]
+position = Vector2( 115, 301 )
+
+[node name="Papers" type="Node" parent="."]
+
+[node name="Paper" parent="Papers" instance=ExtResource( 3 )]
+position = Vector2( 170, 301 )
+itemName = "paper"
+
+[node name="Stones" type="Node" parent="."]
+
+[node name="Stone" parent="Stones" instance=ExtResource( 3 )]
+position = Vector2( 135, 301 )
+itemName = "stone"
+
+[node name="Woods" type="Node" parent="."]
+
+[node name="Wood" parent="Woods" instance=ExtResource( 3 )]
+position = Vector2( 153, 301 )
+itemName = "wood"

@@ -31,6 +31,8 @@ func _physics_process(delta: float) -> void:
 	flip();
 	states.physics_process(delta);
 
+func itemCollected(value, itemName):
+	$Hud/Inventory.addItem(value, itemName);
 
 func flip():
 	mouse = get_global_mouse_position();

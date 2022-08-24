@@ -14,20 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://assets/player/script/BaseState.gd"
 }, {
+"base": "Area2D",
+"class": "Item",
+"language": "GDScript",
+"path": "res://assets/objects/items/wood/WoodItem.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://assets/player/Player.gd"
-}, {
-"base": "Area2D",
-"class": "WoodItem",
-"language": "GDScript",
-"path": "res://assets/objects/items/wood/WoodItem.gd"
 } ]
 _global_script_class_icons={
 "BaseState": "",
-"Player": "",
-"WoodItem": ""
+"Item": "",
+"Player": ""
 }
 
 [application]
@@ -99,6 +99,15 @@ hammer_hit={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="platform"
+2d_physics/layer_2="player"
+2d_physics/layer_3="hammer"
+2d_physics/layer_4="donator"
+2d_physics/layer_5="enemy"
+2d_physics/layer_6="npc"
 
 [physics]
 

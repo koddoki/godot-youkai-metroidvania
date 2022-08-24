@@ -1,12 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/ui/progressbars/hp_bar.png" type="Texture" id=1]
 [ext_resource path="res://assets/ui/progressbars/hp_frame.png" type="Texture" id=2]
 [ext_resource path="res://assets/ui/hud/Hud.gd" type="Script" id=3]
-[ext_resource path="res://assets/ui/hud/inventoryframe/Inventory.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/ui/hud/inventoryframe/Inventory.gd" type="Script" id=4]
+[ext_resource path="res://assets/ui/hud/CollectedItems/CollectedItems.gd" type="Script" id=5]
+[ext_resource path="res://assets/ui/hud/inventoryframe/standard_frame.png" type="Texture" id=6]
+[ext_resource path="res://assets/objects/items/wood/wood_item.png" type="Texture" id=7]
+[ext_resource path="res://assets/objects/items/stone/stone_item.png" type="Texture" id=8]
+[ext_resource path="res://assets/objects/items/bean/bean.png" type="Texture" id=9]
+[ext_resource path="res://assets/objects/items/paper/paper_item.png" type="Texture" id=10]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource( 3 )
+
+[node name="ItemsCollected" type="Node2D" parent="."]
+script = ExtResource( 5 )
 
 [node name="HpFrame" type="Sprite" parent="."]
 position = Vector2( 239.5, 38 )
@@ -52,4 +61,101 @@ margin_bottom = 20.0
 text = "###"
 valign = 1
 
-[node name="Inventory" parent="." instance=ExtResource( 4 )]
+[node name="Inventory" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="WoodFrame" type="Sprite" parent="Inventory"]
+position = Vector2( 64, 544 )
+scale = Vector2( 1.21094, 1.21094 )
+texture = ExtResource( 6 )
+
+[node name="Wood" type="Sprite" parent="Inventory/WoodFrame"]
+modulate = Color( 0, 0, 0, 0.784314 )
+position = Vector2( 0, 1.52588e-05 )
+rotation = 0.523599
+scale = Vector2( 1.39462, 1.39462 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="Inventory/WoodFrame"]
+margin_left = 6.60644
+margin_top = 13.2129
+margin_right = 24.6064
+margin_bottom = 27.2129
+text = "##"
+
+[node name="Label2" type="Label" parent="Inventory/WoodFrame"]
+margin_left = -26.4258
+margin_top = -26.4258
+margin_right = -18.4258
+margin_bottom = -12.4258
+text = "1"
+
+[node name="StoneFrame" type="Sprite" parent="Inventory"]
+position = Vector2( 160, 544 )
+scale = Vector2( 1.21094, 1.21094 )
+texture = ExtResource( 6 )
+
+[node name="Stone" type="Sprite" parent="Inventory/StoneFrame"]
+modulate = Color( 0, 0, 0, 0.784314 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="Inventory/StoneFrame"]
+margin_left = 6.60644
+margin_top = 13.2129
+margin_right = 24.6064
+margin_bottom = 27.2129
+text = "##"
+
+[node name="Label2" type="Label" parent="Inventory/StoneFrame"]
+margin_left = -26.4258
+margin_top = -26.4258
+margin_right = -18.4258
+margin_bottom = -12.4258
+rect_pivot_offset = Vector2( -237.832, 26.4258 )
+text = "2"
+
+[node name="PaperFrame" type="Sprite" parent="Inventory"]
+position = Vector2( 256, 544 )
+scale = Vector2( 1.21094, 1.21094 )
+texture = ExtResource( 6 )
+
+[node name="Paper" type="Sprite" parent="Inventory/PaperFrame"]
+modulate = Color( 0, 0, 0, 0.784314 )
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="Inventory/PaperFrame"]
+margin_left = 6.60644
+margin_top = 13.2129
+margin_right = 24.6064
+margin_bottom = 27.2129
+text = "##"
+
+[node name="Label2" type="Label" parent="Inventory/PaperFrame"]
+margin_left = -26.4258
+margin_top = -26.4258
+margin_right = -18.4258
+margin_bottom = -12.4258
+text = "3"
+
+[node name="BeanFrame" type="Sprite" parent="Inventory"]
+position = Vector2( 352, 544 )
+scale = Vector2( 1.21094, 1.21094 )
+texture = ExtResource( 6 )
+
+[node name="Bean" type="Sprite" parent="Inventory/BeanFrame"]
+modulate = Color( 0, 0, 0, 0.784314 )
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Inventory/BeanFrame"]
+margin_left = 6.60644
+margin_top = 13.2129
+margin_right = 24.6064
+margin_bottom = 27.2129
+text = "##"
+
+[node name="Label2" type="Label" parent="Inventory/BeanFrame"]
+margin_left = -26.4258
+margin_top = -26.4258
+margin_right = -18.4258
+margin_bottom = -12.4258
+text = "4"
