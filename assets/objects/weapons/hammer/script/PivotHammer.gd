@@ -14,7 +14,6 @@ var hammer_position
 var can_attack = true
 var can_relese = false
 onready var attack_timer = get_node("attackCooldown")
-onready var effect = get_parent().get_node("Particles2D")
 
 
 func _ready():
@@ -49,7 +48,6 @@ func hit():
 			attack = normal_attack
 			$AnimationHammer.play("hit");
 		else:
-			effect.global_position = hammer_position + Vector2(0,-14)
 			attack = heavy_attack
 			$AnimationHammer.play("heavy_hit");
 		can_relese = false
