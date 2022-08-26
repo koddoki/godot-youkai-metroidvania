@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wood_hammer.png-d22d7dba6f3348bbb19b556ee5034c8a.stex"
+path="res://.import/wood_hammer.png-fd2e8bc09a6053be4b33b4b82ec7a28e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/hammer/woodhammer/wood_hammer.png"
-dest_files=[ "res://.import/wood_hammer.png-d22d7dba6f3348bbb19b556ee5034c8a.stex" ]
+source_file="res://assets/objects/weapons/hammer/woodhammer/wood_hammer.png"
+dest_files=[ "res://.import/wood_hammer.png-fd2e8bc09a6053be4b33b4b82ec7a28e.stex" ]
 
 [params]
 
