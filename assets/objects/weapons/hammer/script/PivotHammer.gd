@@ -62,4 +62,9 @@ func _on_attack_timer_timeout():
 
 
 func _on_Area2D_body_entered(body):
+	print("pinto")
 	body.hit(attack)
+
+
+func _on_Area2D_area_entered(area):
+	area.hit()

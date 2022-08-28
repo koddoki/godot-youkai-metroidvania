@@ -1,8 +1,8 @@
 extends BaseState
 
-export (float) var move_speed = 100;
+export (int) var move_speed = 100;
 
-func input(event: InputEvent) -> int:
+func input(_event: InputEvent) -> int:
 	if Input.is_action_just_pressed("ui_up"):
 		print("Ó o pulooo")
 		return State.Jump;
@@ -11,7 +11,7 @@ func input(event: InputEvent) -> int:
 	return State.Null;
 
 
-func physics_process(delta: float) -> int:
+func physics_process(_delta: float) -> int:
 	#print("Walk")
 	if !player.is_on_floor():
 		return State.Fall;

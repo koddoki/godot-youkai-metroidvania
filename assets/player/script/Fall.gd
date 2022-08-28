@@ -1,8 +1,8 @@
 extends BaseState
 
-export(float) var move_speed = 60;
+export(int) var move_speed = 60;
 
-func physics_process(delta: float) -> int:
+func physics_process(_delta: float) -> int:
 	#print("Queda Livre")
 	var move = 0;
 	if Input.is_action_pressed("ui_left"):

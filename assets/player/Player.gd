@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 var gravity = 5;
 var velocity = Vector2.ZERO;
-var mouse = get_global_mouse_position();
+onready var mouse = get_global_mouse_position();
 var maxHealth = 100;
 var minHealth = 0;
 export var currentHealth = 100;
@@ -28,13 +28,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	flip();
+	f_flip();
 	states.physics_process(delta);
 
 func itemCollected(value, itemName):
 	$Hud/Inventory.addItem(value, itemName);
 
-func flip():
+func f_flip():
 	mouse = get_global_mouse_position();
 	if mouse < position:
 		$Flip.scale.x = -1;

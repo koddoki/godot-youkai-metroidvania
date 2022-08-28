@@ -1,7 +1,7 @@
 extends BaseState
 
-export (float) var jump_force = 200;
-export (float) var move_speed = 80;
+export (int) var jump_force = 200;
+export (int) var move_speed = 80;
 
 func enter() -> void:
 	# This calls the base class enter function, which is
@@ -10,7 +10,7 @@ func enter() -> void:
 	player.velocity.y = -jump_force;
 
 
-func physics_process(delta: float) -> int:
+func physics_process(_delta: float) -> int:
 	#print("Pulo Pulinho")
 	var move = 0;
 	if Input.is_action_pressed("ui_left"):

@@ -2,11 +2,14 @@ extends Area2D
 
 var toriHealth = 5;
 
-func _ready() -> void:
+
+func receiveItem(_itemName):
 	pass
 
-func receiveItem(itemName):
+func restore(_value):
 	pass
 
-func restore(value):
-	currentHealth = value
+
+func hit():
+	$AnimationPlayer.play("repair")
+	print("ahhhhhhhhhh socorro")
