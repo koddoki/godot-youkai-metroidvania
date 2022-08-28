@@ -4,9 +4,9 @@ extends Node2D
 onready var woodItem = load("res://assets/objects/items/wood/WoodItem.tscn");
 onready var batata = woodItem.instance();
 func _ready() -> void:
-	batata.connect("collected",self,"_on_Wood_Collected")
+	# batata.connect("collected",self,"_on_Wood_Collected")
 	self.add_child(batata)
-	#batata.position = 
+	# batata.position = 
 	pass
 	
 	

@@ -1,9 +1,6 @@
 extends Area2D
 
 var group;
-var i;
-var j;
-var test;
 
 func _ready() -> void:
 	$Timer.start()
