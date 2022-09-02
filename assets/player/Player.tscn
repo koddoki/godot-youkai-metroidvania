@@ -194,8 +194,8 @@ tracks/0/keys = {
 extents = Vector2( 27, 16.5 )
 
 [node name="Player" type="KinematicBody2D"]
+collision_layer = 2
 script = ExtResource( 3 )
-currentHealth = 50
 
 [node name="Hud" parent="." instance=ExtResource( 11 )]
 

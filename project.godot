@@ -14,18 +14,24 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://assets/player/script/BaseState.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://assets/globalScripts/Entity.gd"
+}, {
 "base": "Area2D",
 "class": "Item",
 "language": "GDScript",
 "path": "res://assets/objects/items/wood/WoodItem.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "Entity",
 "class": "Player",
 "language": "GDScript",
 "path": "res://assets/player/Player.gd"
 } ]
 _global_script_class_icons={
 "BaseState": "",
+"Entity": "",
 "Item": "",
 "Player": ""
 }
