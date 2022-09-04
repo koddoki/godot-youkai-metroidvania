@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "BaseState",
 "language": "GDScript",
-"path": "res://assets/player/script/BaseState.gd"
+"path": "res://assets/globalScripts/BaseState.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Entity",
@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://assets/objects/items/wood/WoodItem.gd"
 }, {
+"base": "BaseState",
+"class": "MoveState",
+"language": "GDScript",
+"path": "res://assets/player/states/move.gd"
+}, {
 "base": "Entity",
 "class": "Player",
 "language": "GDScript",
@@ -33,6 +38,7 @@ _global_script_class_icons={
 "BaseState": "",
 "Entity": "",
 "Item": "",
+"MoveState": "",
 "Player": ""
 }
 

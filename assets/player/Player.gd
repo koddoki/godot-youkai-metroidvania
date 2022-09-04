@@ -2,16 +2,15 @@ class_name Player
 
 extends Entity
 
-var gravity = 5;
+var gravity = 4;
 var velocity = Vector2.ZERO;
 onready var mouse = get_global_mouse_position();
 
-
-
 onready var flip = $Flip;
 onready var animation = $AnimationPlayer;
-onready var states = $StateManager;
-onready var hat = $Flip/Rotate/Hat/AnimationHat;
+onready var animationHat = $AnimationHat
+onready var states = $state_manager;
+
 
 func _ready() -> void:
 	$Hud/HpFrame/TextureProgress.value = currentHealth;
