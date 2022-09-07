@@ -5,54 +5,53 @@ class_name Entity
 var maxHealth = 100;
 export var currentHealth = 100;
 
-var regenTimer := Timer.new()
-var poisonTimer := Timer.new()
 
-# Buffs
-var heal = 0
-var poison = 1
+var activated_effects = {}
+var effects = {
+	"poison" : funcref(self,"poison"),
+	"regeneration" : funcref(self,"regeneration")
+}
 
 
 func _ready() -> void:
-	init_timers()
-	#start_poison(5,10)
+	pass
 
 
 func _process(delta: float) -> void:
-	if !regenTimer.is_stopped():
-		regeneration(heal, delta);
-	if !poisonTimer.is_stopped():
-		poisoning(heal, delta);
+	apply_effects(delta)
 
 
-func init_timers():
-	add_child(regenTimer)
-	regenTimer.one_shot = true
-	
-	add_child(poisonTimer)
-	poisonTimer.one_shot = true
-
-# ------ regeneration --------
-func start_regen(_heal, time):
-	regenTimer.wait_time = time
-	regenTimer.start()
-	heal = _heal
+func add_effect(type, quantity, time) -> void:
+	activated_effects[type] = {"quantity":quantity, "time":time}
 
 
-func regeneration(heal, delta):
-	heal(heal * delta);
+func apply_effects(delta: float) -> void:
+	for effect in activated_effects:
+		effects[effect].call_func(activated_effects[effect], delta, effect)
 
 
-# ----------- poison --------
-func start_poison(_poison, time):
-	poisonTimer.wait_time = time
-	poisonTimer.start()
-	poison = _poison
+func effect_timer(time: float, delta: float, type: String) -> float:
+	time -= delta
+	if time <= 0:
+		activated_effects.erase(type)
+	return time
 
 
-func poisoning(poison, delta):
-	print(poison * delta);
-	dor(poison * delta);
+func poison(effect, delta, type) -> void:
+	effect["time"] = effect_timer(effect["time"], delta, type)
+	if effect["time"] <= 0:
+		print("fim do effeito:" + type)
+		
+	dor(effect["quantity"] * delta)
+
+
+func regeneration(effect, delta, type) -> void:
+	effect["time"] = effect_timer(effect["time"], delta, type)
+	if effect["time"] <= 0:
+		print("fim do effeito:" + type)
+		
+	heal(effect["quantity"] * delta)
+
 
 func heal(health):
 	currentHealth = currentHealth + health;
