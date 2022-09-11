@@ -19,6 +19,14 @@ func enter() -> void:
 	entity.velocity.y = -jump_force
 
 
+func input(event: InputEvent) -> BaseState:
+	if Input.is_action_just_released("ui_up"):
+		entity.gravity *= 2
+		return fall_state
+	
+	return null
+
+
 func physics_process(delta: float) -> BaseState:
 	var move = 0
 	if Input.is_action_pressed("ui_left"):

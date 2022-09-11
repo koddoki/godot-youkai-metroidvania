@@ -1,4 +1,5 @@
-extends KinematicBody2D
+extends Entity
+
 
 export var speed = 5
 var direction = Vector2()

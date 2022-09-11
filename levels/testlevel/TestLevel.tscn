@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/objects/items/sake/Sake.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 146.5, 10 )
+extents = Vector2( 149, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 18, 10 )
@@ -25,14 +25,14 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma"]
-position = Vector2( 148.5, 79 )
-shape = SubResource( 1 )
-
 [node name="Sprite" type="Sprite" parent="Plataforma"]
 position = Vector2( 150.5, 78.5 )
 scale = Vector2( 4.67188, 0.328125 )
 texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma"]
+position = Vector2( 151, 79 )
+shape = SubResource( 1 )
 
 [node name="Plataforma2" type="StaticBody2D" parent="."]
 position = Vector2( 88, 59 )

@@ -6,7 +6,9 @@ var maxHealth = 100;
 export var currentHealth = 100;
 
 
-var activated_effects = {}
+var activated_effects = {
+	#"poison": {"quantity":1 ,"time":10}
+}
 var effects = {
 	"poison" : funcref(self,"poison"),
 	"regeneration" : funcref(self,"regeneration")
