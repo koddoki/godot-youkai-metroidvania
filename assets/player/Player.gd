@@ -9,6 +9,7 @@ onready var mouse = get_global_mouse_position();
 onready var flip = $Flip;
 onready var animation = $AnimationPlayer;
 onready var animationHat = $AnimationHat
+onready var animationBambu = get_node("AnimationBambu")
 onready var states = $state_manager;
 
 

@@ -5,8 +5,9 @@
 [ext_resource path="res://assets/objects/items/wood/WoodItem.gd" type="Script" id=3]
 [ext_resource path="res://assets/objects/items/bean/bean.png" type="Texture" id=4]
 [ext_resource path="res://assets/objects/items/stone/stone_item.png" type="Texture" id=5]
-[ext_resource path="res://assets/player/hat/strawhat/straw_hat.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/sprites/hat/strawhat/straw_hat.png" type="Texture" id=6]
 [ext_resource path="res://assets/objects/items/paper/paper_item.png" type="Texture" id=7]
+
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {

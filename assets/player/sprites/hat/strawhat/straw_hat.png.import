@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/straw_hat.png-81c2bd9e41897edd58dc5d170f535921.stex"
+path="res://.import/straw_hat.png-95a96f7d134da5f8406de811458d9d65.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/hat/strawhat/straw_hat.png"
-dest_files=[ "res://.import/straw_hat.png-81c2bd9e41897edd58dc5d170f535921.stex" ]
+source_file="res://assets/player/sprites/hat/strawhat/straw_hat.png"
+dest_files=[ "res://.import/straw_hat.png-95a96f7d134da5f8406de811458d9d65.stex" ]
 
 [params]
 

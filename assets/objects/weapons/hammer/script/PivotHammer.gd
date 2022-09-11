@@ -3,7 +3,7 @@ extends Node2D
 onready var hammer = $Hammer;
 
 var max_dist = 15;
-var cooldown = 2;
+var cooldown = .5;
 
 var normal_attack = 20
 var heavy_attack = 40

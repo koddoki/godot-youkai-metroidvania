@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/head.png-66941508987e7c1875288f5626e7b72b.stex"
+path="res://.import/head_blue_kimono.png-98a1409d6d418743d5fae0ea6619e961.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/head/head.png"
-dest_files=[ "res://.import/head.png-66941508987e7c1875288f5626e7b72b.stex" ]
+source_file="res://assets/player/sprites/body/bluekimono/head_blue_kimono.png"
+dest_files=[ "res://.import/head_blue_kimono.png-98a1409d6d418743d5fae0ea6619e961.stex" ]
 
 [params]
 

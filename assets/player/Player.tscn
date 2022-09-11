@@ -1,7 +1,7 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=33 format=2]
 
-[ext_resource path="res://assets/player/body/bluekimono/head_blue_kimono.png" type="Texture" id=1]
-[ext_resource path="res://assets/player/hat/strawhat/straw_hat.png" type="Texture" id=2]
+[ext_resource path="res://assets/player/sprites/body/bluekimono/head_blue_kimono.png" type="Texture" id=1]
+[ext_resource path="res://assets/player/sprites/hat/strawhat/straw_hat.png" type="Texture" id=2]
 [ext_resource path="res://assets/player/Player.gd" type="Script" id=3]
 [ext_resource path="res://assets/globalScripts/state_manager.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/player/states/idle.gd" type="Script" id=5]
@@ -9,7 +9,9 @@
 [ext_resource path="res://assets/player/states/jump.gd" type="Script" id=7]
 [ext_resource path="res://assets/player/states/fall.gd" type="Script" id=8]
 [ext_resource path="res://assets/objects/weapons/weapon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/player/sprites/bambuLegs/bambuLeg.png" type="Texture" id=10]
 [ext_resource path="res://assets/ui/hud/Hud.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/player/states/WoodLegs.gd" type="Script" id=12]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -36,6 +38,114 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BambuLegsCollision:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Flip/BambuLeg:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Flip/BambuLeg2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Flip/BambuLeg:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 67.5 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Flip/BambuLeg2:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.5 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Flip/BambuLeg2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2, 4 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Flip/BambuLeg:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 4 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Flip/BambuLeg2:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.5 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Flip/BambuLeg:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.5 ) ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -103,6 +213,655 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 5.0, -5.0, 5.0 ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BambuLegsCollision:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Flip/BambuLeg:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flip/BambuLeg2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Flip/BambuLeg:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 67.5 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Flip/BambuLeg2:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.5 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Flip/BambuLeg2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2, 4 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Flip/BambuLeg:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 4 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Flip/BambuLeg2:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.5 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Flip/BambuLeg:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.5 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Flip/Rotate:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -5.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Flip/Rotate:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("RayCast2D:enabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("BambuLegsCollision:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.500001, 24.5 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("BambuLegsCollision:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("RayCast2D:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.6 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "bambuLegs"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Flip/BambuLeg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.392157 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Flip/BambuLeg2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.392157 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BambuLegsCollision:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Flip/BambuLeg2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2, 4 ), Vector2( -3, 5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Flip/BambuLeg:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 4 ), Vector2( 4, 5 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Flip/BambuLeg:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 67.5, 90.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Flip/BambuLeg2:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 112.5, 90.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Flip/BambuLeg2:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.5 ), Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Flip/BambuLeg:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.5 ), Vector2( 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Flip/Rotate:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 3.0, -6.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("RayCast2D:enabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("BambuLegsCollision:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 13.2 ), Vector2( 0.5, 24.5313 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("BambuLegsCollision:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.4, 0.1 ), Vector2( 1.2, 0.28 ), Vector2( 1, 0.82 ), Vector2( 1, 1 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("RayCast2D:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.3 ), Vector2( 1, 0.9 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "bambu_exit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Flip/BambuLeg2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3, 5 ), Vector2( -2, 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Flip/BambuLeg2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 112.5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flip/BambuLeg2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.25, 0.5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Flip/BambuLeg2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Flip/BambuLeg:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4, 5 ), Vector2( 2, 4 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Flip/BambuLeg:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 67.5 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Flip/BambuLeg:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.25, 0.5 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Flip/BambuLeg:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("BambuLegsCollision:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("RayCast2D:enabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "bambu_fall"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Flip/BambuLeg:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 90.0, 80.0, 90.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Flip/BambuLeg2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 90.0, 100.0, 90.0 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "bambu_idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Flip/BambuLeg2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3, 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Flip/BambuLeg2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flip/BambuLeg:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4, 5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Flip/BambuLeg:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Flip/Rotate:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ), Vector2( 0, -1 ), Vector2( 0, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Flip/BambuLeg2:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 92.0, 89.0, 91.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Flip/BambuLeg:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 89.0, 91.0 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "bambu_walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Flip/BambuLeg2:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 80.0, 100.0, 80.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Flip/BambuLeg:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 100.0, 80.0, 100.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flip/Rotate:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Flip/Rotate:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ), Vector2( 0, -1 ), Vector2( 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=17]
@@ -197,6 +956,9 @@ extents = Vector2( 4, 7 )
 radius = 4.0
 height = 6.0
 
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 6.5, 12.4688 )
+
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 3 )
@@ -210,6 +972,7 @@ animation_name = "idle"
 jump_node = NodePath("../Jump")
 fall_node = NodePath("../Fall")
 walk_node = NodePath("../Walk")
+bambuLegs_node = NodePath("../BambuLegs")
 
 [node name="Walk" type="Node" parent="state_manager"]
 script = ExtResource( 6 )
@@ -218,6 +981,7 @@ jump_node = NodePath("../Jump")
 fall_node = NodePath("../Fall")
 idle_node = NodePath("../Idle")
 walk_node = NodePath(".")
+bambuLegs_node = NodePath("../BambuLegs")
 
 [node name="Jump" type="Node" parent="state_manager"]
 script = ExtResource( 7 )
@@ -235,6 +999,12 @@ walk_node = NodePath("../Walk")
 idle_node = NodePath("../Idle")
 jump_node = NodePath("../Jump")
 
+[node name="BambuLegs" type="Node" parent="state_manager"]
+script = ExtResource( 12 )
+animation_name = "bambuLegs"
+jump_node = NodePath("../Jump")
+idle_node = NodePath("../Fall")
+
 [node name="Hud" parent="." instance=ExtResource( 11 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -244,6 +1014,14 @@ anims/idle = SubResource( 4 )
 anims/jump = SubResource( 6 )
 anims/walk = SubResource( 5 )
 
+[node name="AnimationBambu" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 26 )
+anims/bambuLegs = SubResource( 27 )
+anims/bambu_exit = SubResource( 28 )
+anims/bambu_fall = SubResource( 31 )
+anims/bambu_idle = SubResource( 30 )
+anims/bambu_walk = SubResource( 29 )
+
 [node name="AnimationHat" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Flip/Rotate/Hat")
 anims/RESET = SubResource( 17 )
@@ -251,9 +1029,6 @@ anims/fall = SubResource( 18 )
 anims/idle = SubResource( 19 )
 anims/jump = SubResource( 20 )
 anims/walk = SubResource( 21 )
-
-[node name="Body" type="Sprite" parent="."]
-texture = ExtResource( 1 )
 
 [node name="Head" type="Sprite" parent="."]
 position = Vector2( 0, -7 )
@@ -264,9 +1039,21 @@ current = true
 zoom = Vector2( 0.3, 0.3 )
 
 [node name="Flip" type="Node2D" parent="."]
-visible = false
+
+[node name="BambuLeg" type="Sprite" parent="Flip"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 2, 4 )
+rotation = 1.1781
+scale = Vector2( 0.25, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Body" type="Sprite" parent="Flip"]
+rotation = 0.0523599
+texture = ExtResource( 1 )
 
 [node name="Rotate" type="Position2D" parent="Flip"]
+position = Vector2( 0, 1 )
+rotation = -0.0872665
 
 [node name="ReferencePosition" parent="Flip/Rotate" instance=ExtResource( 9 )]
 position = Vector2( 0, 0 )
@@ -276,7 +1063,14 @@ position = Vector2( 0, -13 )
 texture = ExtResource( 2 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Flip/Rotate"]
-remote_path = NodePath("../../../Body")
+remote_path = NodePath("../../Body")
+
+[node name="BambuLeg2" type="Sprite" parent="Flip"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -2, 4 )
+rotation = 1.9635
+scale = Vector2( 0.25, 0.5 )
+texture = ExtResource( 10 )
 
 [node name="Donator" type="Area2D" parent="Flip"]
 collision_layer = 8
@@ -287,10 +1081,19 @@ visible = false
 position = Vector2( 0, -4.5 )
 shape = SubResource( 16 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="HeadCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5 )
 shape = SubResource( 2 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="BodyCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -5 )
 shape = SubResource( 22 )
+
+[node name="BambuLegsCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 0.500001, 24.5 )
+shape = SubResource( 24 )
+disabled = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+scale = Vector2( 1, 0.6 )
+cast_to = Vector2( 0, 36 )
