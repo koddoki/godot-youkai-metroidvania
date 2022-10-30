@@ -1048,7 +1048,6 @@ scale = Vector2( 0.25, 0.5 )
 texture = ExtResource( 10 )
 
 [node name="Body" type="Sprite" parent="Flip"]
-rotation = 0.0523599
 texture = ExtResource( 1 )
 
 [node name="Rotate" type="Position2D" parent="Flip"]

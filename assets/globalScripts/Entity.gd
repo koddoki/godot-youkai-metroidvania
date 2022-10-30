@@ -64,3 +64,5 @@ func dor(damage):
 	currentHealth = clamp(currentHealth - damage, 0, maxHealth);
 	$Hud.update(currentHealth, maxHealth);
 	print(currentHealth);
+	
+

@@ -2,7 +2,7 @@ class_name Player
 
 extends Entity
 
-var gravity = 4;
+var gravity = 100;
 var velocity = Vector2.ZERO;
 onready var mouse = get_global_mouse_position();
 
@@ -39,3 +39,19 @@ func f_flip():
 		$Flip.scale.x = -1;
 	else:
 		$Flip.scale.x = 1;
+
+func dor_collision(enemyPos: Vector2):
+	Input.action_release("left")
+	Input.action_release("right")
+	var knockback_direction = enemyPos.direction_to(self.global_position)
+	global_position += knockback_direction + Vector2(10,10);
+	
+	
+	
+#	velocity.y = -100
+#	if position.x <= enemyPos.x:
+#		velocity.x = -300
+#	elif position.x > enemyPos.x:
+#		velocity.x = 300
+#	Input.action_release("left")
+#	Input.action_release("right")

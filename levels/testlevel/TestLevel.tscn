@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/objects/tileset/poisonpit/PoisonPit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/objects/items/heart/Heart.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/objects/items/sake/Sake.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/enemies/wanyudo/Wanyudo.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 149, 10 )
@@ -49,23 +50,38 @@ position = Vector2( 150.5, 78.5 )
 scale = Vector2( 4.67188, 0.328125 )
 texture = ExtResource( 2 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( 125, -20 )
+[node name="Plataforma3" type="StaticBody2D" parent="."]
+position = Vector2( 399, 11 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma3"]
+position = Vector2( 148.5, 79 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Plataforma3"]
+position = Vector2( 150.5, 78.5 )
+scale = Vector2( 4.67188, 0.328125 )
+texture = ExtResource( 2 )
+
+[node name="Bloco" type="StaticBody2D" parent="."]
+position = Vector2( 132, -21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bloco"]
 position = Vector2( 16, 79 )
 shape = SubResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D2"]
+[node name="Sprite" type="Sprite" parent="Bloco"]
 position = Vector2( 16.25, 79 )
 scale = Vector2( 0.585937, 0.328125 )
 texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 149, 33 )
+position = Vector2( 410, 61 )
 currentHealth = 20
 
 [node name="PoisonPit" parent="." instance=ExtResource( 5 )]
@@ -100,3 +116,36 @@ itemName = "wood"
 
 [node name="Sake" parent="." instance=ExtResource( 7 )]
 position = Vector2( 376, 107 )
+
+[node name="Bloco2" type="StaticBody2D" parent="."]
+position = Vector2( 638, -8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bloco2"]
+position = Vector2( 16, 79 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Bloco2"]
+position = Vector2( 16.25, 79 )
+scale = Vector2( 0.585937, 0.328125 )
+texture = ExtResource( 2 )
+
+[node name="Bloco3" type="StaticBody2D" parent="."]
+position = Vector2( 432, -10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bloco3"]
+position = Vector2( 16, 79 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Bloco3"]
+position = Vector2( 16.25, 79 )
+scale = Vector2( 0.585937, 0.328125 )
+texture = ExtResource( 2 )
+
+[node name="Wanyudo" parent="." instance=ExtResource( 8 )]
+position = Vector2( 502, 38 )
